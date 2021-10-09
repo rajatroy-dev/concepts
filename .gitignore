@@ -3,3 +3,5 @@
 .venv/
 *.class
 *.exe
+package-lock.json
+node_modules/
