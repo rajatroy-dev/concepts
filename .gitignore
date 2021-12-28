@@ -5,3 +5,4 @@
 *.exe
 package-lock.json
 node_modules/
+reactjs/package.json
