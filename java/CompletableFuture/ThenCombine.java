@@ -1,4 +1,4 @@
-package CompletableFuture;
+package completablefuture;
 
 import java.util.ArrayList;
 import java.util.Arrays;
