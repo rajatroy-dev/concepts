@@ -14,3 +14,5 @@ function bar(fn) {
     // this is inside closure -> bar
     fn(); // this is run as part of closure -> bar
 }
+
+foo();
