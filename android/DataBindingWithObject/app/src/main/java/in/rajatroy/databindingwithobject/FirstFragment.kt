@@ -1,4 +1,4 @@
-package `in`.rajatroy.databinding
+package `in`.rajatroy.databindingwithobject
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import `in`.rajatroy.databinding.databinding.FragmentFirstBinding
-import android.opengl.Visibility
+import `in`.rajatroy.databindingwithobject.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -33,15 +32,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply {
-            firstFragmentToggle.setOnClickListener{
-                if (firstFragmentprogressBar.visibility == View.VISIBLE) {
-                    firstFragmentprogressBar.visibility = View.GONE
-                } else {
-                    firstFragmentprogressBar.visibility = View.VISIBLE
-                }
-            }
-        }
+        binding.person = getPerson()
 
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
@@ -51,5 +42,9 @@ class FirstFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getPerson(): Person {
+        return Person(1, "Nicole", "Female")
     }
 }

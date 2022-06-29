@@ -1,4 +1,4 @@
-package `in`.rajatroy.databinding
+package `in`.rajatroy.databindingwithobject
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import `in`.rajatroy.databinding.databinding.FragmentSecondBinding
+import `in`.rajatroy.databindingwithobject.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -32,18 +32,8 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.secondFragmentHelloButton.setOnClickListener {
-            greet()
-        }
-
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
-    }
-
-    private fun greet() {
-        binding.apply {
-            secondFragmentGreetings.text = "Hello! " + secondFragmentNameInput.text
         }
     }
 
