@@ -1,6 +1,6 @@
-# View Model
+# View Model Factory
 
-**We use ViewModel because we want the data to be consistent even if there is any configuration change such as changing orientation of the screen.**
+**We use ViewModelFactory when we need to use custom view models with constructor parameters.**
 
 ---
 
@@ -42,12 +42,31 @@ buildFeatures {
 
 7. Add a view model class that inherits `ViewModel`.
 
-8. Add the corresponding state and methods to manipulate state.
+8. Add an init method and initialize the variable that is passed to constructor.
 
-9. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+9. Add a view model factory class.
 
-10. Add the corresponding bindings in `app` > `src` > `main` > `java` > ... > `*.kt`.
+10. Inherit from `ViewModelProvider.Factory`.
 
-11. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+11. Specify the variable that is to be injected via constructor.
 
-12. Use the methods to manipulate state in the bindings. 
+12. Add the boilerplate code similar to below:
+
+    ```
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(MainActivityViewModel::class.java)) {
+            return MainActivityViewModel(initNumber) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class");
+    }
+    ```
+
+13. Add the corresponding state and methods to manipulate state.
+
+14. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+
+15. Add the corresponding bindings, viewModel and viewModelFactory in `app` > `src` > `main` > `java` > ... > `*.kt`.
+
+16. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+
+17. Use the methods to manipulate state in the bindings. 

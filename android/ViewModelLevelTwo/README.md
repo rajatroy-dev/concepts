@@ -28,11 +28,11 @@ buildFeatures {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     ```
 
-2. Add the views to `app` > `src` > `main` > `res` > `layout` > `*.xml`.
+4. Add the views to `app` > `src` > `main` > `res` > `layout` > `*.xml`.
 
-3. Wrap everything in `activity_main.xml` except `<?xml version="1.0" encoding="utf-8"?>` inside `<layout></layout>`
+5. Wrap everything in `activity_main.xml` except `<?xml version="1.0" encoding="utf-8"?>` inside `<layout></layout>`
 
-4. Move the following from opening `<androidx.constraintlayout.widget.ConstraintLayout>` to opening `<layout>` tag.
+6. Move the following from opening `<androidx.constraintlayout.widget.ConstraintLayout>` to opening `<layout>` tag.
 
     ```
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,14 +40,14 @@ buildFeatures {
     xmlns:tools="http://schemas.android.com/tools"
     ```
 
-5. Add a view model class that inherits `ViewModel`.
+7. Add a view model class that inherits `ViewModel`.
 
-6. Add the corresponding state and methods to manipulate state.
+8. Add the corresponding state and methods to manipulate state.
 
-7. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+9. Binding for `activity_main.xml` will be `ActivityMainBinding`.
 
-8. Add the corresponding bindings in `app` > `src` > `main` > `java` > ... > `*.kt`.
+10. Add the corresponding bindings and viewModel in `app` > `src` > `main` > `java` > ... > `*.kt`.
 
-9. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+11. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
 
-10. Use the methods to manipulate state in the bindings. 
+12. Use the methods to manipulate state in the bindings. 
