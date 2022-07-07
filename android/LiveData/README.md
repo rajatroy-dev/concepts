@@ -1,6 +1,6 @@
-# View Model Factory
+# Live Data
 
-**We use ViewModelFactory when we need to use custom view models with constructor parameters.**
+**We use LiveData to observe the data in ViewModel from the activity or fragment. Change in data will automatically update the activity or fragment.**
 
 ---
 
@@ -46,13 +46,17 @@ buildFeatures {
 
 9. Add the corresponding state and methods to manipulate state.
 
-10. Add a view model factory class.
+10. Data type of state must be of type `MutableLiveData`.
 
-11. Inherit from `ViewModelProvider.Factory`.
+11. Add special get method to get data.
 
-12. Specify the variable that is to be injected via constructor.
+12. Add a view model factory class.
 
-13. Add the boilerplate code similar to below:
+13. Inherit from `ViewModelProvider.Factory`.
+
+14. Specify the variable that is to be injected via constructor.
+
+15. Add the boilerplate code similar to below:
 
     ```
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -63,10 +67,10 @@ buildFeatures {
     }
     ```
 
-14. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+16. Binding for `activity_main.xml` will be `ActivityMainBinding`.
 
-15. Add the corresponding bindings, viewModel and viewModelFactory in `app` > `src` > `main` > `java` > ... > `*.kt`.
+17. Add the corresponding bindings, viewModel, viewModelFactory and observer in `app` > `src` > `main` > `java` > ... > `*.kt`.
 
-16. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+18. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
 
-17. Use the methods to manipulate state in the bindings. 
+19. Use the methods to manipulate state in the bindings. 
