@@ -1,6 +1,6 @@
-# View Model with Data Binding
+# Live Data With Data Binding
 
-**We use View Model With Data Binding so that we can call the state changing functions directly from view using event listeners such as onClick, etc.**
+**We use Live Data With Data Binding so that we can directly access the value of state and display it in view.**
 
 ---
 
@@ -56,10 +56,12 @@ buildFeatures {
 
 14. Add onClickListener to `Button` view in XML using `android:onClick` and map the lambda function to ViewModel function.
 
-15. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+15. Display the state value by accessing the state variable in `android:text` of `TextView`.
 
-16. Add the corresponding bindings, viewModel and observer in `app` > `src` > `main` > `java` > ... > `*.kt`.
+16. Binding for `activity_main.xml` will be `ActivityMainBinding`.
 
-17. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+17. Add the corresponding bindings, viewModel and observer in `app` > `src` > `main` > `java` > ... > `*.kt`.
 
-18. Use the methods to manipulate state in the bindings. 
+18. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+
+19. Use the methods to manipulate state in the bindings. 
