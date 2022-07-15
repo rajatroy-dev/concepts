@@ -42,20 +42,26 @@ buildFeatures {
 
 7. Add a view model class that inherits `ViewModel`.
 
-8. Add an init method and initialize the variable.
+8. Add an init method and initialize the variable say `sum`.
 
-9. Data type of state must be of type `MutableLiveData`.
+9. Add the corresponding input variable say `input` and method to manipulate state.
 
-10. Add `data` to `activity_main.xml` under `layout`.
+10. Data type of state must be of type `MutableLiveData`.
 
-11. Add the variable `name` and `type`.
+11. Add `data` to `activity_main.xml` under `layout`.
 
-12. Display the state value by accessing the state variable in `android:text` of `TextView`.
+12. Add the variable `name` and `type`.
 
-13. To edit the state value from an input do `android:text="@={<viewmodel>.<state>}"` in `EditText`. **'='** is the important part here.
+13. Display the state value by accessing `sum` in `android:text` of `TextView`.
 
-14. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+14. To edit the state value, take an input like `android:text="@={<viewmodel>.input}"` in `EditText`. **'='** is the important part here.
 
-15. Add the corresponding bindings, viewModel and observer in `app` > `src` > `main` > `java` > ... > `*.kt`.
+15. Add onClickListener to `Button` view in XML using `android:onClick` and map the lambda function to ViewModel function.
 
-16. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+16. Binding for `activity_main.xml` will be `ActivityMainBinding`.
+
+17. Add the corresponding bindings, viewModel in `app` > `src` > `main` > `java` > ... > `*.kt`.
+
+18. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
+
+19. Use the methods to manipulate state in the bindings. 
