@@ -125,28 +125,18 @@ android {
 
 29. Add binding related code to `SecondFragment`.
 
-7. Add a view model class that inherits `ViewModel`.
+30. Connect one fragment to another in `nav_graph.xml` (in **Design** mode).
 
-8. Add an init method and initialize the variable say `sum`.
+31. This will create an *action* from one fragment to another.
 
-9. Add the corresponding input variable say `input` and method to manipulate state.
+32. Change to **Code** mode in `nav_graph.xml`. You should see an `action` tag now.
 
-10. Data type of state must be of type `MutableLiveData`.
+33. In the `onCreateView` method of `HomeFragment` add click listener to navigate to `SecondFragment`.
 
-11. Add `data` to `activity_main.xml` under `layout`.
+34. To send data from `HomeFragment` to `SecondFragment` we will get the value from text field and use bundle to send the data as **key-value** pair.
 
-12. Add the variable `name` and `type`.
+35. Pass this bundle to navigate object.
 
-13. Display the state value by accessing `sum` in `android:text` of `TextView`.
+36. Access the value from `arguments` object in second fragment.
 
-14. To edit the state value, take an input like `android:text="@={<viewmodel>.input}"` in `EditText`. **'='** is the important part here.
-
-15. Add onClickListener to `Button` view in XML using `android:onClick` and map the lambda function to ViewModel function.
-
-16. Binding for `activity_main.xml` will be `ActivityMainBinding`.
-
-17. Add the corresponding bindings, viewModel in `app` > `src` > `main` > `java` > ... > `*.kt`.
-
-18. Similarly, id for each view will be camelCased. `first_fragment` will be `firstFragment`.
-
-19. Use the methods to manipulate state in the bindings. 
+37. The above way to send data from one fragment to another is not recommended. We should use **VIEW MODEL** instead.
