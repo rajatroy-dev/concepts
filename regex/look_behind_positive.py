@@ -5,7 +5,7 @@ look-behind requires fixed-width pattern
 
 import re
 
-pattern = "(?<=0123)ABCD" # Match the first ABCD that has 0123 before it
+pattern = "(?<=0123)[A-Z]+" # Match the first ABCD that has 0123 before it
 true_txt = "abcd0123ABCD"
 false_txt = "0123abcdABCD"
 
