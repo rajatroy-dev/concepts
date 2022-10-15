@@ -1,4 +1,4 @@
-package functionalinterface;
+package streams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ class Employee {
     }
 }
 
-public class Predicate {
+public class Filter {
     public static void main(String[] args) {
         ArrayList<Employee> employees = new ArrayList<>();
         employees.add(new Employee("1", "Christina", EmployeeType.REGULAR));
