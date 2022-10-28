@@ -1,3 +1,5 @@
+package designpattern;
+
 interface Factory {
     void whoAmI();
 }
@@ -25,7 +27,7 @@ class FindFactory {
     }
 }
 
-public class FactoryMethods {
+public class FactoryPattern {
     public static void main(String[] args) {
 
         String factoryType = "secondFactory";
