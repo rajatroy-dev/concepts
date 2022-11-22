@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "data-binding": {
+    "two-way-binding": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/data-binding",
+            "outputPath": "dist/two-way-binding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "data-binding:build:production"
+              "browserTarget": "two-way-binding:build:production"
             },
             "development": {
-              "browserTarget": "data-binding:build:development"
+              "browserTarget": "two-way-binding:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "data-binding:build"
+            "browserTarget": "two-way-binding:build"
           }
         },
         "test": {

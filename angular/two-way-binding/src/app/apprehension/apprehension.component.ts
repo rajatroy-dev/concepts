@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./apprehension.component.scss']
 })
 export class ApprehensionComponent {
-  @Input() counter = 0;
+  @Input() counter!: number;
   @Output() counterChange = new EventEmitter<number>();
 
   increment() {
