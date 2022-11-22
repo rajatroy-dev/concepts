@@ -1,0 +1,10 @@
+<!-- [value] From source to view -->
+<!-- (input) From view to source -->
+<input type="text" [value]="text" (input)="handleInputChange($event)">
+<p>{{ text }}</p>
+
+<hr />
+
+<!-- ngModel -->
+<input type="text" [(ngModel)]="anotherText">
+<p>{{ anotherText }}</p>
