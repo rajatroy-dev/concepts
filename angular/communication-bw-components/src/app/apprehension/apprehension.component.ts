@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { SharedService } from './services/shared.service';
+import { SharedService } from '../services/shared.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-apprehension',
+  templateUrl: './apprehension.component.html',
+  styleUrls: ['./apprehension.component.scss']
 })
-export class AppComponent {
+export class ApprehensionComponent {
   parentValue!: string;
   childValue!: string;
 
   constructor(private sharedService: SharedService) {
-    this.sharedService.parentValue = "Initial";
+    this.sharedService.childValue = "Initial";
   }
 
   ngAfterContentChecked() {
-    this.childValue = this.sharedService.childValue;
+    this.parentValue = this.sharedService.parentValue;
   }
 
   changeParentValue(e: Event) {

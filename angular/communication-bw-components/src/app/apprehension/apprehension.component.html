@@ -1,0 +1,7 @@
+<p>Parent component value: {{ parentValue }}</p>
+
+<p>Child component input:</p>
+<input type="text" [value]="childValue || ''" (input)="changeChildValue($event)" placeholder="Child component input">
+
+<p>Update parent from child:</p>
+<input type="text" [value]="parentValue || ''" (input)="changeParentValue($event)" placeholder="Parent component input">
