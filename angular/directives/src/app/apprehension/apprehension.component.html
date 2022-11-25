@@ -1,0 +1,16 @@
+<p>BUILT-IN / STRUCTURAL DIRECTIVES</p>
+
+<p [ngStyle]="ngStyleClicked ? { 'color': 'green' } : { 'color': 'red' }" (click)="handleNgStyleClick()">NgStyle: Click
+  to change
+  color.</p>
+<p [ngClass]="ngClassClicked ? 'blue' : 'yellow'" (click)="handleNgClassClicked()">NgClass: Click to change color.</p>
+
+<input type="text" [(ngModel)]="ngModelText">
+<p>NgModelText: {{ ngModelText }}</p>
+
+<hr />
+
+<p>ATTRIBUTE DIRECTIVE</p>
+
+<p appHighlight>Highlight Me!</p>
+<p [appHighlight]="ngModelText">Highlight Me With Input!</p>
