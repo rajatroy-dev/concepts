@@ -11,6 +11,6 @@ export class LoginComponent {
 
   handleSubmit() {
     sessionStorage.setItem("token", "authenticated");
-    this.router.navigate(['/first-child']).then(() => window.location.reload);
+    this.router.navigate(['/first-child']);
   }
 }
