@@ -1,7 +1,7 @@
 // https://nextjs.org/docs/pages/building-your-application/authentication#optimistic-checks-with-middleware-optional
 import { NextRequest, NextResponse } from 'next/server'
-import { decrypt } from '@/app/lib/session'
-import { cookies } from 'next/headers'
+// import { decrypt } from '@/app/lib/session'
+// import { cookies } from 'next/headers'
 
 // 1. Specify protected and public routes
 const protectedRoutes = ['/dashboard']
@@ -13,19 +13,22 @@ export default async function middleware(req: NextRequest) {
     const isProtectedRoute = protectedRoutes.includes(path)
     const isPublicRoute = publicRoutes.includes(path)
 
-    // 3. Decrypt the session from the cookie
-    const cookie = (await cookies()).get('session')?.value
-    const session = await decrypt(cookie)
+    // // 3. Decrypt the session from the cookie
+    // const cookie = (await cookies()).get('session')?.value
+    // const session = await decrypt(cookie)
+
+    // 3. Get the token from localStorage
+    const token = localStorage.getItem('token')
 
     // 4. Redirect to /login if the user is not authenticated
-    if (isProtectedRoute && !session?.userId) {
+    if (isProtectedRoute && !token) {
         return NextResponse.redirect(new URL('/login', req.nextUrl))
     }
 
     // 5. Redirect to /dashboard if the user is authenticated
     if (
         isPublicRoute &&
-        session?.userId &&
+        token &&
         !req.nextUrl.pathname.startsWith('/dashboard')
     ) {
         return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
