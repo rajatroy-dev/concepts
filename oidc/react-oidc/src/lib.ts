@@ -16,19 +16,6 @@ export const clientConfig = {
     code_challenge_method: 'S256',
 }
 
-export interface SessionData {
-    isLoggedIn: boolean
-    access_token?: string
-    code_verifier?: string
-    state?: string
-    userInfo?: {
-        sub: string
-        name: string
-        email: string
-        email_verified: boolean
-    }
-}
-
 export const defaultSession: SessionData = {
     isLoggedIn: false,
     access_token: undefined,
