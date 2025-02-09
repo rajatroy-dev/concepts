@@ -1,3 +1,4 @@
+// https://blog.antosubash.com/posts/openid-connect-with-nextjs-with-openid-client-6-and-next-15
 import { getClientConfig, getSession, clientConfig } from '@/lib'
 import * as client from 'openid-client'
 
